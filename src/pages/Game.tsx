@@ -1,17 +1,19 @@
 import { useEffect, useState } from "react";
 import { Team, allTeams } from "../services/team.service";
+import TeamCard from "../components/TeamCard";
 
 function Game() {
 	const [team, setTeam] = useState<Team>();
 	const [randomTeams, setRandomTeams] = useState<Team[]>([]);
 	const [selectedTeam, setSelectedTeam] = useState<Team>();
 	const [score, setScore] = useState(0);
+	const [bestStreak, setBestStreak] = useState(0);
 
 	useEffect(() => {
 
 		const getRandomTeams = () => {
 			const shuffledTeams = [...allTeams].sort(() => 0.5 - Math.random());
-			const selectedTeams = allTeams;
+			const selectedTeams = shuffledTeams.slice(0, 6);
 			return selectedTeams;
 		};
 
@@ -52,6 +54,9 @@ function Game() {
 			if (selectedTeam.name === team?.name) {
 				setScore(score + 1);
 			} else {
+				if (score > bestStreak) {
+					setBestStreak(score);
+				}
 				setScore(0);
 			}
 			resetGame();
@@ -60,17 +65,28 @@ function Game() {
 
 	return (
 		<div>
-			<p className="mb-4">Guess which team is {team?.name}</p>
-			<p className="mb-4">Score: {score}</p>
+			<div className="flex flex-col items-center space-y-5 mb-5">
+				<p className="text-2xl font-bold"
+				>Find the team </p>
+				<p className="text-2xl font-bold">
+					{team?.name}
+				</p>
+				<div className="flex flex-row items-center space-x-5">
+					<p className="text-2xl font-bold">
+						Score: {score}
+					</p>
+					<p className="text-2xl font-bold">
+						Best Streak: {bestStreak}
+					</p>
+				</div>
+			</div>
+
 			<div className="grid grid-cols-2 gap-4">
 				{randomTeams.map((team, index) => (
-					<div key={index} className="flex justify-center items-center">
-						<img src={team.image} alt="Logo can't loaded" className="h-max-36 h-min-36
-						hover:opacity-50 transition duration-500 ease-in-out" onClick={() => setSelectedTeam(team)} />
-					</div>
+					<TeamCard key={index} team={team} onClick={() => setSelectedTeam(team)} />
 				))}
 			</div>
-		</div>
+		</div >
 	);
 }
 
