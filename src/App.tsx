@@ -10,7 +10,7 @@ function App() {
 		<Routes>
 			<Route path="/team-logo-guess" element={<Layout />}>
 				<Route index element={<Home />} />
-				<Route path="/game" element={<Game />} />
+				<Route path="game" element={<Game />} />
 			</Route>
 			<Route path="*" element={<h1>404</h1>} />
 		</Routes>
