@@ -8,9 +8,10 @@ function Game() {
 	const [score, setScore] = useState(0);
 
 	useEffect(() => {
+
 		const getRandomTeams = () => {
 			const shuffledTeams = [...allTeams].sort(() => 0.5 - Math.random());
-			const selectedTeams = shuffledTeams.slice(0, 6);
+			const selectedTeams = allTeams;
 			return selectedTeams;
 		};
 

@@ -12,6 +12,7 @@ function App() {
 				<Route index element={<Home />} />
 				<Route path="game" element={<Game />} />
 			</Route>
+			<Route path="*" element={<h1>404</h1>} />
 		</Routes>
 	);
 }

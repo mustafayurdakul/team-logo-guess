@@ -969,7 +969,7 @@ export const allTeams: Team[] = [
 		name: "Ural Yekaterinburg"
 	},
 	{
-		image: "/team-logo-guess/logos/RU1/Zenit St.Petersburg.png",
+		image: "/team-logo-guess/logos/RU1/Zenit St. Petersburg.png",
 		name: "Zenit St.Petersburg"
 	},
 	{
@@ -1013,11 +1013,11 @@ export const allTeams: Team[] = [
 		name: "Ross County FC"
 	},
 	{
-		image: "/team-logo-guess/logos/SC1/St.Johnstone FC.png",
-		name: "St.Johnstone FC"
+		image: "/team-logo-guess/logos/SC1/St. Johnstone FC.png",
+		name: "St. Johnstone FC"
 	},
 	{
-		image: "/team-logo-guess/logos/SC1/St.Mirren FC.png",
+		image: "/team-logo-guess/logos/SC1/St. Mirren FC.png",
 		name: "St.Mirren FC"
 	},
 	{
