@@ -8,7 +8,7 @@ import Game from "./pages/Game";
 function App() {
 	return (
 		<Routes>
-			<Route path="/" element={<Layout />}>
+			<Route path="/team-logo-guess" element={<Layout />}>
 				<Route index element={<Home />} />
 				<Route path="game" element={<Game />} />
 			</Route>
