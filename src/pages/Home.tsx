@@ -11,7 +11,7 @@ function Home() {
 				choose a specific league.
 			</p>
 
-			<Link to="/game">
+			<Link to="/team-logo-guess/game">
 				<CustomButton>Play</CustomButton>
 			</Link>
 			<Footer />
